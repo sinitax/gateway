@@ -5016,6 +5016,11 @@ func (in *JWT) DeepCopyInto(out *JWT) {
 		*out = new(bool)
 		**out = **in
 	}
+	if in.IgnoreFailure != nil {
+		in, out := &in.IgnoreFailure, &out.IgnoreFailure
+		*out = new(bool)
+		**out = **in
+	}
 	if in.Providers != nil {
 		in, out := &in.Providers, &out.Providers
 		*out = make([]JWTProvider, len(*in))
